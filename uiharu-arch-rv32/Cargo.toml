@@ -1,0 +1,14 @@
+[package]
+name        = "uiharu-arch-rv32"
+description = "RISC-V 32-bit backend for Uiharu JIT"
+readme      = "README.md"
+
+version.workspace      = true
+edition.workspace      = true
+authors.workspace      = true
+license.workspace      = true
+keywords.workspace     = true
+categories.workspace   = true
+
+[dependencies]
+uiharu-arch = { path = "../uiharu-arch" }

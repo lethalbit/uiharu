@@ -1,0 +1,39 @@
+[workspace]
+resolver = "2"
+
+members = [
+    "uiharu",
+    "uiharu-arch",
+
+    # ARM Family
+    "uiharu-arch-arm64",
+    "uiharu-arch-arm",
+    "uiharu-arch-thumb1",
+    "uiharu-arch-thumb2",
+
+    # RISC-V Family
+    "uiharu-arch-rv32",
+    "uiharu-arch-rv64",
+
+    # x86 Family
+    "uiharu-arch-8086",
+    "uiharu-arch-ia32",
+    "uiharu-arch-amd64",
+]
+
+[workspace.package]
+edition = "2024"
+authors = [
+	"aki-nyan <aki@lethalbit.net>"
+]
+license      = "BSD-3-Clause"
+version      = "0.1.0"
+categories   = [
+    "compilers", "development-tools", "development-tools::ffi",
+]
+keywords     = [
+    "jit",
+]
+
+[profile.release]
+lto = true

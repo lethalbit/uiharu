@@ -1,0 +1,17 @@
+[package]
+name        = "uiharu-arch-amd64"
+description = "AMD64 (x86_64/x64) backend for Uiharu JIT"
+readme      = "README.md"
+
+version.workspace      = true
+edition.workspace      = true
+authors.workspace      = true
+license.workspace      = true
+keywords.workspace     = true
+categories.workspace   = true
+
+[dependencies]
+uiharu-arch = { path = "../uiharu-arch" }
+
+[dev-dependencies]
+yaxpeax-x86 = "2.0.0" # for tests

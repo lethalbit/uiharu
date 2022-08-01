@@ -1,0 +1,13 @@
+[package]
+name        = "uiharu-arch"
+description = "Fundamental traits and API for Uiharu JIT architecture backends"
+readme      = "README.md"
+
+version.workspace      = true
+edition.workspace      = true
+authors.workspace      = true
+license.workspace      = true
+keywords.workspace     = true
+categories.workspace   = true
+
+[dependencies]

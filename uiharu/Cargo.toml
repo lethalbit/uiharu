@@ -1,0 +1,41 @@
+[package]
+name        = "uiharu"
+description = "Cross-platform multi-architecture capable JIT backend library"
+readme      = "README.md"
+
+version.workspace      = true
+edition.workspace      = true
+authors.workspace      = true
+license.workspace      = true
+keywords.workspace     = true
+categories.workspace   = true
+
+[dependencies]
+uiharu-arch = { path = "../uiharu-arch" }
+
+# ARM family
+uiharu-arch-arm    = { path = "../uiharu-arch-arm",    optional = true }
+uiharu-arch-arm64  = { path = "../uiharu-arch-arm64",  optional = true }
+uiharu-arch-thumb1 = { path = "../uiharu-arch-thumb1", optional = true }
+uiharu-arch-thumb2 = { path = "../uiharu-arch-thumb2", optional = true }
+
+# RISC-V
+uiharu-arch-rv32 = { path = "../uiharu-arch-rv32", optional = true }
+uiharu-arch-rv64 = { path = "../uiharu-arch-rv64", optional = true }
+
+# x86/AMD64
+uiharu-arch-amd64 = { path = "../uiharu-arch-amd64", optional = true }
+uiharu-arch-ia32  = { path = "../uiharu-arch-ia32",  optional = true }
+uiharu-arch-8086  = { path = "../uiharu-arch-8086",  optional = true }
+
+
+
+[features]
+# Maybe a bit much if we add a lot of ISAs
+default = [ "all" ]
+
+all    = [ "arm", "risc-v", "x86" ]
+
+arm    = [ "uiharu-arch-arm", "uiharu-arch-arm64", "uiharu-arch-thumb1", "uiharu-arch-thumb2" ]
+risc-v = [ "uiharu-arch-rv32", "uiharu-arch-rv64" ]
+x86    = [ "uiharu-arch-amd64", "uiharu-arch-ia32", "uiharu-arch-8086" ]
